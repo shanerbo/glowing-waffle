@@ -9,38 +9,11 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Erbo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Home</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="/account">{{user.username}}</a></li>
-                <li><a href="/logout">Logout</a></li>
-                {% else %}
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
-    {% if messages %}
-        {% for msg in messages %}
-            {% if msg.tags == 'success' %}
-                <script> M.toast({html: "{{msg}}", classes: 'green rounded', displayLength: 3000});</script>
-            {% elif msg.tags == 'info' %}
-                <script> M.toast({html: "{{msg}}", classes: 'blue rounded', displayLength: 2000});</script>
-            {% elif msg.tags == 'warning' %}
-                <script> M.toast({html: "{{msg}}", classes: 'orange rounded', displayLength: 10000});</script>
-            {% elif msg.tags == 'error' %}
-                 <script> M.toast({html: "{{msg}}", classes: 'red rounded', displayLength: 10000});</script>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
+    {% include "main/includes/navbar.html" %}
+    {% include "main/includes/message.html" %}
     <div class="container">
         <br>
         {% block content %}
-
         {% endblock %}
     </div>
 </body>

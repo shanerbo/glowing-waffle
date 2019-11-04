@@ -1,16 +1,39 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import New
+from .models import New, NewCategory, NewSeries
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .form import NewUserForm
 
+
 # Create your views here.
+def single_slug(request, single_slug):
+    categories = [c.category_slug for c in NewCategory.objects.all()]
+    if single_slug in categories:
+        matching_series = NewSeries.objects.filter(new_category__category_slug=single_slug)
+
+        series_urls = {}
+        for m in matching_series.all():
+            part_one = New.objects.filter(new_series__new_series=m.new_series)
+            series_urls[m] = part_one.new_slug
+
+        return render(request,
+                      template_name="main/category.html",
+                      context={"part_ones": series_urls},
+                      )
+
+    news = [c.new_slug for c in New.objects.all()]
+    if single_slug in news:
+        return HttpResponse(f"{single_slug} is a new!")
+
+    return HttpResponse(f"{single_slug} does not correspond to anything.")
+
+
 def homepage(request):
     return render(request=request,
-                  template_name="main/home.html",
-                  context={"news": New.objects.all},
+                  template_name="main/categories.html",
+                  context={"categories": NewCategory.objects.all},
                   )
 
 

@@ -20,6 +20,7 @@ class NewSeries(models.Model):
     new_category = models.ForeignKey(NewCategory, default=1, verbose_name="Category", on_delete=models.SET_DEFAULT)
     series_summary = models.CharField(max_length=200)
 
+
     class Meta:
         verbose_name_plural = "Series"
 

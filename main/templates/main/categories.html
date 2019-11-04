@@ -2,16 +2,22 @@
 {% block content %}
     <div class="row">
         {% for cat in categories %}
-        <div class="col s12 m6 18">
-            <a href="/{{cat.category_slug}}" , style="color:#000">
-                <div class="card hoverable">
-                    <div class="card-content">
-                        <div class="card-title">{{cat.new_category}}</div>
-                        <p style="font-size:70%">{{cat.category_summary}}</p>
+            <div class="col s12 m5 18">
+
+                <a href="/{{ cat.category_slug }}" , style="color:#000">
+
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://materializecss.com/images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">{{ cat.new_category }}</div>
+                            <p style="font-size:70%">{{ cat.category_summary }}</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}

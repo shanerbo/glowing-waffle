@@ -1,0 +1,10 @@
+{% extends "main/header.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col s12, m6, 18">
+            <h3>{{new.new_tittle}}</h3>
+            <p style="font-size: 70%">Timeline: {{new.new_publish}}</p>
+            {{new.new_content|safe}}
+        </div>
+    </div>
+{% endblock %}

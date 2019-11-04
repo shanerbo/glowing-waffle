@@ -15,8 +15,9 @@ def single_slug(request, single_slug):
 
         series_urls = {}
         for m in matching_series.all():
-            part_one = New.objects.filter(new_series__new_series=m.new_series)
-            series_urls[m] = part_one.new_slug
+            part_one = New.objects.filter(new_series__new_series=m.new_series).values('new_slug').earliest('new_publish')
+            print((part_one))
+            series_urls[m] = part_one['new_slug']
 
         return render(request,
                       template_name="main/category.html",
@@ -25,7 +26,10 @@ def single_slug(request, single_slug):
 
     news = [c.new_slug for c in New.objects.all()]
     if single_slug in news:
-        return HttpResponse(f"{single_slug} is a new!")
+        this_new = New.objects.get(new_slug = single_slug)
+        return render(request,
+                      template_name="main/new.html",
+                      context={"new":this_new})
 
     return HttpResponse(f"{single_slug} does not correspond to anything.")
 

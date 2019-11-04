@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from django.contrib import admin
 
 app_name = "main"
 
@@ -23,5 +24,6 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path("logout/", views.logout_request, name="logout"),
     path("login/", views.login_request, name="login"),
-    path("<single_slug>/", views.single_slug, name="single_slug"), # <single_slug> will be passed into views
+    path("admin/", admin.site.urls),
+    path("<single_slug>/", views.single_slug, name="single_slug"),  # <single_slug> will be passed into views
 ]

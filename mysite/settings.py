@@ -14,7 +14,7 @@ import os
 
 # Mode
 
-MODE = 'GCP'
+MODE = 'local'
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

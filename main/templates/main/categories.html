@@ -8,11 +8,10 @@
 
                     <div class="card hoverable">
                         <div class="card-image">
-                            <img src="https://materializecss.com/images/sample-1.jpg">
-                            <span class="card-title">Card Title</span>
+                            <img src="{{ cat.category_url }}">
+                            <div class="card-title">{{ cat.new_category }}</div>
                         </div>
                         <div class="card-content">
-                            <div class="card-title">{{ cat.new_category }}</div>
                             <p style="font-size:70%">{{ cat.category_summary }}</p>
                         </div>
                     </div>

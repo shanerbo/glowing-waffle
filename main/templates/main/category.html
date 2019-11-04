@@ -2,16 +2,19 @@
 {% block content %}
     <div class="row">
         {% for new, partone in part_ones.items %}
-        <div class="col s12 m6 18">
-            <a href="/{{partone}}" , style="color:#000">
-                <div class="card hoverable">
-                    <div class="card-content">
-                        <div class="card-title">{{new.new_series}}</div>
-                        <p style="font-size:70%">{{new.series_summary}}</p>
+            <div class="col s12 m6 18">
+                <a href="/{{ partone }}" , style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="{{ new.series_url }}">
+                            <div class="card-title">{{ new.new_series }}</div>
+                        </div>
+                        <div class="card-content">
+                            <p style="font-size:70%">{{ new.series_summary }}</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}

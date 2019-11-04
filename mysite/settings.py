@@ -91,26 +91,26 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'mysite',
-#         'USER': 'Unchained_Erbo',
-#         'PASSWORD': 'p',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mysite',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': '/cloudsql/erbo-6496:us-west1:mysite',
+        'USER': 'Unchained_Erbo',
+        'PASSWORD': 'p',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mysite',
+#         'USER': 'admin',
+#         'PASSWORD': 'admin',
+#         'HOST': '/cloudsql/erbo-6496:us-west1:mysite',
+#         'PORT': '5432',
+#     }
+# }
 
 # Tinymce editor
 # https://www.tiny.cloud/docs/configure/

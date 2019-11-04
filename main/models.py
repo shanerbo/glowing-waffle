@@ -34,6 +34,7 @@ class New(models.Model):
     new_publish = models.DateTimeField("date published", default=datetime.now())
 
     new_series = models.ForeignKey(NewSeries, default=1, verbose_name="Series", on_delete=models.SET_DEFAULT)
+
     new_slug = models.CharField(max_length=200, default=1)
 
     def __str__(self):

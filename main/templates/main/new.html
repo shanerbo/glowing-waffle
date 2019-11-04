@@ -1,10 +1,30 @@
 {% extends "main/header.html" %}
 {% block content %}
     <div class="row">
-        <div class="col s12, m6, 18">
-            <h3>{{new.new_tittle}}</h3>
+        <div class="col s12 m8 16">
+            <h3>{{new.new_title}}</h3>
             <p style="font-size: 70%">Timeline: {{new.new_publish}}</p>
             {{new.new_content|safe}}
         </div>
+
+        <div class="col s12 m4 14">
+            <ul class="collapsible popout">
+                {% for new in sidebar %}
+                    {% if forloop.counter0 == this_new_idx %}
+                        <li class="active">
+                            <div class="collapsible-header"> {{ new.new_title }} <br>(currently viewing) </div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="collapsible-header">{{new.new_tittle}}</div>
+                            <div class="collapsible-body">
+                                <p><a href="/{{new.new_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:darkgreen; color: white">Go</button></a></p>
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
     </div>
 {% endblock %}

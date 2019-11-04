@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Mode
-mode = 'gcp'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +27,11 @@ SECRET_KEY = 'ngh!@*wkm%7ruu(cjw8^=%se8q#f*2y1@8pk)3ct!4a5g$ewx)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['erbo-6496.appspot.com',
+                 # must add the app engine (project-id) domain here
+                 '127.0.0.1',
+                 # for local testing
+                 ]
 
 # Application definition
 
@@ -77,39 +80,36 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if mode == 'remote':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'mysite',
-            'USER': 'admin',
-            'PASSWORD': 'admin',
-            'HOST': '34.82.191.27',
-            'PORT': '5432',
-        }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #         'NAME': 'mysite',
+    #         'USER': 'admin',
+    #         'PASSWORD': 'admin',
+    #         'HOST': '34.82.191.27',
+    #         'PORT': '5432',
+    #     }
+    # }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #         'NAME': 'mysite',
+    #         'USER': 'Unchained_Erbo',
+    #         'PASSWORD': 'p',
+    #         'HOST': 'localhost',
+    #         'PORT': '5432',
+    #     }
+    # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mysite',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': '/cloudsql/erbo-6496:us-west1:mysite',
+        'PORT': '5432',
     }
-elif mode=='local':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'mysite',
-            'USER': 'Unchained_Erbo',
-            'PASSWORD': 'p',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'mysite',
-            'USER': 'admin',
-            'PASSWORD': 'admin',
-            'HOST': 'erbo-6496:us-west1:mysite',
-            'PORT': '5432',
-        }
-    }
+}
 
 
 

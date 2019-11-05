@@ -2,59 +2,47 @@
     {% load static %}
     <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}"/>
 
-    <link rel="stylesheet" href="{% static 'main/prism.css' %}">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="{% static 'main/css/materialize.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'main/prism.css' %}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Erbo</title>
 </head>
 
 <body>
-    {% include "main/includes/navbar.html" %}
-    {% include "main/includes/message.html" %}
-    <header class="green darken-4">
-        <!--header intro page-->
-        <container>
-            <div class="container">
-                <div class="intro-text" >
-                    <div class="intro-heading animated fadeInUp">Website Title</div>
-                    <div class="intro-lead-in animated fadeInUp">
-                        <span>
-                            <p>Spend three years in
-                        Computing science in Simon Fraser University. I am eager to bring
-                        my passion and realistic vision to the computer technology field.
-                        Throughout university, I participated in various projects and my
-                        working experience through which I have gained knowledge of several
-                        programming languages, such as C/C++, Python and JavaScript.
-                        </p>
-                        </span>
-                    </div>
-                </div>
-                <a href="#down" class="arrow-container">
-                  <div class="arrow"></div>
-                  <div class="arrow"></div>
-                  <div class="arrow"></div>
-                </a>
-            </div>
+{% include "main/includes/navbar.html" %}
+{% include "main/includes/message.html" %}
+{% url 'main:homepage' as home_url %}
+{% if request.get_full_path == home_url %}
+    {% include "main/includes/intro.html" %}
 
-        </container>
+{% endif %}
 
-    </header>
 
-    <section id="overview">
-        <div class="container" id="down">
-            <br>
-            {% block content %}
-            {% endblock %}
+<section id="overview">
+    <div class="container" id="down">
+        <br>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <br>
+    <div class="container" >
+        <div id="resume>">
+            <img class="materialboxed" width="450"
+                 src="https://storage.googleapis.com/mysite-cardview-img/Erbo_Resume.jpg" alt="my resume">
+            <img src="" alt=""><i class="fas fa-file-download"></i>
+            <a >Button</a>
         </div>
-    </section>
+    </div>
 
+</section>
 </body>
 
 

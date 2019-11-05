@@ -7,8 +7,10 @@ html {
     scroll-behavior: smooth;
 }
 
-div{
+div {
     font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+
 }
 
 a {
@@ -19,7 +21,7 @@ a {
 
 #down {
     padding-top: 5%;
-    padding-bottom: 50%;
+    padding-bottom: 0%;
 }
 
 html, body {
@@ -34,115 +36,150 @@ section {
     width: 100vw;
 }
 
+
 header {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-  height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    color: white;
+    height: 100vh;
 }
 
 
 #overview {
-  position: relative;
-  background-color: #fff;
+    position: relative;
+    background-color: #fff;
 }
+
+
 header .intro-text {
-  padding-top: 100px;
-  padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     padding-right: 100px;
-  position: fixed;
-  display:block
+    padding-left: 100px;
+
+    position: fixed;
+    display: block
 }
+
 header .intro-text .intro-lead-in {
-  font-family: 'Raleway', sans-serif;
-  font-size: 22px;
-  line-height: 22px;
-  margin-bottom: 25px;
-}
-@media (min-width: 500px){
-  header .intro-text {
-    padding-top: 200px;
-    padding-bottom: 200px;
-  }
-  header .intro-text .intro-lead-in {
     font-family: 'Raleway', sans-serif;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 22px;
+    line-height: 22px;
     margin-bottom: 25px;
-  }
-  header .intro-text .intro-heading {
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 75px;
-    line-height: 75px;
-    letter-spacing: 12px;
-  }
 }
+
+@media (min-width: 500px) {
+    header .intro-text {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text .intro-lead-in {
+        font-family: 'Raleway', sans-serif;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 25px;
+    }
+
+    header .intro-text .intro-heading {
+        font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 75px;
+        line-height: 75px;
+        letter-spacing: 12px;
+    }
+}
+
 #overview {
-  z-index: 100;
+    z-index: 100;
 }
-#nav{
+
+#footer {
+    z-index: 100;
+}
+
+#arrow {
+    z-index: 10;
+}
+
+#nav {
     z-index: 200;
 }
 
+img.materialboxed {
+    display: block;
+    margin: 0 auto;
+}
 
- .arrow-container {
-	 display: block;
-	 width: 100px;
-	 height: 100px;
-	 position: fixed;
-	 top: 90%;
-	 left: 50%;
-	 transform: translate(-50%, -50%) rotateZ(0deg);
+
+.arrow-container {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(0deg);
 }
- .arrow-container:hover {
-	 cursor: pointer;
+
+.arrow-container:hover {
+    cursor: pointer;
 }
- .arrow-container:hover .arrow {
-	 top: 50%;
+
+.arrow-container:hover .arrow {
+    top: 50%;
 }
- .arrow-container:hover .arrow:before {
-	 transform: translate(-50%, -50%) rotateZ(-30deg);
+
+.arrow-container:hover .arrow:before {
+    transform: translate(-50%, -50%) rotateZ(-30deg);
 }
- .arrow-container:hover .arrow:after {
-	 transform: translate(-50%, -50%) rotateZ(30deg);
+
+.arrow-container:hover .arrow:after {
+    transform: translate(-50%, -50%) rotateZ(30deg);
 }
- .arrow {
-	 position: absolute;
-	 left: 50%;
-	 transition: all 0.4s ease;
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    transition: all 0.4s ease;
 }
- .arrow:before, .arrow:after {
-	 transition: all 0.4s ease;
-	 content: '';
-	 display: block;
-	 position: absolute;
-	 transform-origin: bottom right;
-	 background: #fff;
-	 width: 4px;
-	 height: 50px;
-	 border-radius: 10px;
-	 transform: translate(-50%, -50%) rotateZ(-45deg);
+
+.arrow:before, .arrow:after {
+    transition: all 0.4s ease;
+    content: '';
+    display: block;
+    position: absolute;
+    transform-origin: bottom right;
+    background: #fff;
+    width: 4px;
+    height: 50px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) rotateZ(-45deg);
 }
- .arrow:after {
-	 transform-origin: bottom left;
-	 transform: translate(-50%, -50%) rotateZ(45deg);
+
+.arrow:after {
+    transform-origin: bottom left;
+    transform: translate(-50%, -50%) rotateZ(45deg);
 }
- .arrow:nth-child(1) {
-	 opacity: 0.3;
-	 top: 35%;
+
+.arrow:nth-child(1) {
+    opacity: 0.3;
+    top: 35%;
 }
- .arrow:nth-child(2) {
-	 opacity: 0.6;
-	 top: 55%;
+
+.arrow:nth-child(2) {
+    opacity: 0.6;
+    top: 55%;
 }
- .arrow:nth-child(3) {
-	 opacity: 0.9;
-	 top: 75%;
+
+.arrow:nth-child(3) {
+    opacity: 0.9;
+    top: 75%;
 }

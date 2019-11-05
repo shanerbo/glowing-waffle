@@ -18,14 +18,45 @@
 <body>
     {% include "main/includes/navbar.html" %}
     {% include "main/includes/message.html" %}
-    <div class="container" style="max-width:1500px; min-height:100%">
-        <br>
-        {% block content %}
-        {% endblock %}
-    </div>
+    <header class="green darken-4">
+        <!--header intro page-->
+        <container>
+            <div class="container">
+                <div class="intro-text" >
+                    <div class="intro-heading animated fadeInUp">Website Title</div>
+                    <div class="intro-lead-in animated fadeInUp">
+                        <span>
+                            <p>Spend three years in
+                        Computing science in Simon Fraser University. I am eager to bring
+                        my passion and realistic vision to the computer technology field.
+                        Throughout university, I participated in various projects and my
+                        working experience through which I have gained knowledge of several
+                        programming languages, such as C/C++, Python and JavaScript.
+                        </p>
+                        </span>
+                    </div>
+                </div>
+                <a href="#down" class="arrow-container">
+                  <div class="arrow"></div>
+                  <div class="arrow"></div>
+                  <div class="arrow"></div>
+                </a>
+            </div>
+
+        </container>
+
+    </header>
+
+    <section id="overview">
+        <div class="container" id="down">
+            <br>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+
 </body>
 
 
 <script src="{% static 'main/js/prism.js' %}"></script>
 <script>  M.AutoInit();</script>
-

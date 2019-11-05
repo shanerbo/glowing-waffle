@@ -117,6 +117,10 @@ img.materialboxed {
     display: block;
     margin: 0 auto;
 }
+a.btn-floating{
+        display: block;
+    margin: 0 auto;
+}
 
 
 .arrow-container {
